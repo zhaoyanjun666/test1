@@ -1,26 +1,36 @@
 package com.hp.demo;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+
+import com.hp.bean.Student;
+
 public class Demo8 {
-	public static void main(String[] args) {
-		/* 逻辑运算符 : && 、 || 、！、&、|
-		 * &&：与   左右两边都为true，结果为true，只要有一边不成立结果就为fasle；
-		 * ||: 或  左右两边只要有一边成立结果就为true；
-		 * ！： 非（取反）
-		 * &：  单与
-		 * |:  单或
-		 */
-		int  a = 10 ;
-		int b = 3;
-		int c = 123;
-		int d = 23;
+	public static void main(String[] args) throws Exception {
 		
-		boolean result = b<a && d>c;
-		System.out.println(result);
+		Student stu = new Student("金莲", 18);
 		
-		System.out.println(!result);
+		// 对象流   序列化
+		ObjectOutputStream oos = null;
+		FileOutputStream fos = new FileOutputStream("d:/test.txt");
+		oos = new ObjectOutputStream(fos);
+		oos.writeObject(stu);
 		
-		result = b>a || d>c;
-		System.out.println(result);
+		// 对象流的读取 反序列化
+		ObjectInputStream ois = new ObjectInputStream(new FileInputStream("d:/test.txt"));
+		Student readObject = (Student)ois.readObject();
+		System.out.println(readObject);
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 	}

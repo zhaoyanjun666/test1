@@ -1,25 +1,19 @@
 package com.hp.demo;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+
 public class Demo5 {
-	 public static void main(String[] args) {
-		double i = 5.0+5.0*9.2+4.0+'a';
+	public static void main(String[] args) throws Exception {
+		// 使用文件字节输出流，进行向文本的输出
+		FileOutputStream fos = null;
 		
-		int  a = 10;
-		double d = 23.33;
+		fos = new FileOutputStream("d:/test.txt",true);
 		
-		// 自动类型转换
-		/*d = a;
-		System.out.println(d);*/
+		//fos.write(106);
 		
-		
-		// 强制类型转换
-		a = (int)d;
-		System.out.println(a);
-		
-		int s = 128;
-		byte b = 12;
-		b = (byte)s;
-		System.out.println(b);
+		byte[] b = {97,98,99};
+		fos.write(b);
 		
 		
 		
