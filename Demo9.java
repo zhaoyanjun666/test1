@@ -1,25 +1,28 @@
 package com.hp.demo;
 
-import java.util.Scanner;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Properties;
 
 public class Demo9 {
-	public static void main(String[] args) {
-		// 获取键盘输入对象
-		Scanner input = new Scanner(System.in);
-		System.out.println("请输入数字");
-		// 获取int类型的输入
-		int num = input.nextInt();
-		System.out.println(num);
-		
-		System.out.println("请输入姓名");
-		String name = input.next();
+	public static void main(String[] args) throws Exception {
+		// 集合对象Properties类， 继承HashTable，实现了Map接口,结合io流使用
+		Properties pro = new Properties();
+		pro.setProperty("name", "西门");
+		pro.setProperty("age", "31");
+		pro.setProperty("email", "清涧县@qq.com");
 		
 		
-		System.out.println(name);
+		
+		FileWriter fw = new FileWriter("d:/pro.properties");
+		
+		
+		pro.store(fw, "");
+		
+		fw.close();
 		
 		
 		
 		
 	}
-	
 }
