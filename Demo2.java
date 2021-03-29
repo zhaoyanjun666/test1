@@ -1,33 +1,25 @@
 package com.hp.demo;
 
-import java.util.ArrayList;
+import com.hp.bean.MyThread;
 
 public class Demo2 {
 	public static void main(String[] args) {
-		byte b = 127;
-		short s = 12323;
-		int i = 123343;
-		long l = 123122313l;
+	/*	Thread thread = new Thread();
+		thread.start();
+		*/
 		
-		System.out.println(b);
-		float f = 23.33f;
-		double d = 233.3;
+		System.out.println(Thread.currentThread().getName()+"开始");
+		MyThread mt1 = new MyThread();
+		mt1.setName("王宝强");
+		mt1.start();
+		MyThread mt2 = new MyThread();
+		mt2.setName("马蓉");
+		mt2.start();
+		MyThread mt3 = new MyThread();
+		mt3.setName("宋喆");
+		mt3.start();
 		
-		char c = 'a';
-		boolean bl = false;
-		
-		
-		String name = "金莲";
-		
-		char  c1;
-		c1 = 'd';
-		
-		
-		
-		
-		
-		
-		
+		System.out.println(Thread.currentThread().getName()+"结束");
 		
 	}
 }

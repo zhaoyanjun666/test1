@@ -1,25 +1,39 @@
 package com.hp.demo;
 
+import com.hp.bean.MyThread2;
+
 public class Demo3 {
 	public static void main(String[] args) {
-		// 变量
-		String name ;
+		MyThread2 mt1 = new MyThread2();
+		Thread t1 = new Thread(mt1);
+		t1.start();
 		
-		name = "金莲";
-		System.out.println(name);
 		
-		name = "李逵";
-		System.out.println(name);
+		Thread t2 = new Thread(mt1);
+		t2.start();
 		
-		// 常量
-		final double d = 3.1415926;
-		
-		int i = 2;
+		/*new Thread(){
 
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				super.run();
+			}
+			
+			
+			
+			
+		}.start();
 		
-		double result = d*2*2;
 		
-		
+		new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				
+			}
+		}).start();*/
 		
 	}
 }
